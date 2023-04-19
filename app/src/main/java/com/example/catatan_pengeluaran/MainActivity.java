@@ -49,8 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 // Pengecekan jumlah harus diisi
                                 if (jumlah.isEmpty()){
-                                    Toast.makeText(MainActivity.this, "jumlah pengeluaran harus diisi", Toast.LENGTH_SHORT).show();
-                                    return;
+                                    Toast.makeText(MainActivity.this, "Jumlah pengeluaran harus diisi", Toast.LENGTH_SHORT).show();
                                 }else {
                                     //Opsi 1: Passing data via extras
                                     Bundle bundle = new Bundle();
