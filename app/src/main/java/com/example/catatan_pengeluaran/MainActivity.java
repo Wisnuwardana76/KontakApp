@@ -49,15 +49,16 @@ public class MainActivity extends AppCompatActivity {
 
                                 // Pengecekan jumlah harus diisi
                                 if (jumlah.isEmpty()){
-                                    Toast.makeText( MainActivity.this)
+                                    Toast.makeText(MainActivity.this, "jumlah pengeluaran harus diisi", Toast.LENGTH_SHORT).show();
+                                    return;
                                 }else {
                                     //Opsi 1: Passing data via extras
                                     Bundle bundle = new Bundle();
                                     bundle.putString("KeyNama", nama);
                                     bundle.putString("keyJumlah", jumlah);
                                     Intent intent = new Intent(MainActivity.this, DataActivity.class);
-                                    intent.putExtra(bundle);
-                                    star
+                                    intent.putExtras(bundle);
+                                    startActivity(intent);
 
                                 }
 
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                                 dialogInterface.cancel();
                             }
                         });
-                // mwmbuat dialog
+                // membuat dialog
                 AlertDialog alertDialog = alertDialogBuilder.create();
 
                 //menampilkan dialog
