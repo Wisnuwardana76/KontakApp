@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Deklarasi Variable
     TextView tvNama;
+    TextView tvTotal;
     EditText etJumlah;
     Button btnSubmit;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         // inisialisasi variable
         tvNama = findViewById(R.id.tvNama);
+        tvTotal = findViewById(R.id.tvTotal);
         etJumlah = findViewById(R.id.etJumlah);
         btnSubmit = findViewById(R.id.btnSubmit);
 
@@ -46,15 +48,25 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 String nama = tvNama.getText().toString();
                                 String jumlah = etJumlah.getText().toString();
+                                String total = tvTotal.getText().toString();
+
 
                                 // Pengecekan jumlah harus diisi
                                 if (jumlah.isEmpty()){
                                     Toast.makeText(MainActivity.this, "Jumlah pengeluaran harus diisi", Toast.LENGTH_SHORT).show();
                                 }else {
+
+                                    // Menghitung total pengeluaran
+                                    int jumlahPengeluaran = Integer.parseInt(jumlah);
+                                    int totalPengeluaran = Integer.parseInt(total);
+                                    int hasilPengeluaran = jumlahPengeluaran + totalPengeluaran;
+
                                     //Opsi 1: Passing data via extras
                                     Bundle bundle = new Bundle();
                                     bundle.putString("KeyNama", nama);
-                                    bundle.putString("keyJumlah", jumlah);
+                                    bundle.putInt("keyJumlah", jumlahPengeluaran);
+                                    bundle.putInt("keytotal", totalPengeluaran);
+                                    bundle.putInt("keyHasil", hasilPengeluaran);
                                     Intent intent = new Intent(MainActivity.this, DataActivity.class);
                                     intent.putExtras(bundle);
                                     startActivity(intent);

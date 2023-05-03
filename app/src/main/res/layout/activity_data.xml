@@ -52,6 +52,13 @@
                         android:textColor="@color/white"
                         android:textSize="16sp"/>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Pengeluaran"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"/>
+
 
                 </LinearLayout>
 
@@ -59,6 +66,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=":"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -101,6 +117,23 @@
                         android:text="Default pengeluaran"
                         android:textColor="@color/white"
                         android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tvTotalPengeluaran"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Default total"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_hasil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Default total"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"/>
+
 
 
                 </LinearLayout>

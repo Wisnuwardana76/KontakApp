@@ -6,20 +6,39 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class DataActivity extends AppCompatActivity {
+    private String nama;
+    private int jumlahPengeluaran;
+    private int totalPengeluaran;
+    private int hasilPengeluaran;
 
-    TextView tvNamaValue, tvJumlahValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data);
 
-        tvNamaValue = findViewById(R.id.tvName);
-        tvJumlahValue = findViewById(R.id.tvJumlahPengeluaran);
-
+        // Ambil Bundle dari Intent
         Bundle bundle = getIntent().getExtras();
-        tvNamaValue.setText(bundle.getString("KeyNama"));
-        tvJumlahValue.setText(bundle.getString("keyJumlah"));
+
+        // Ambil nilai dari Bundle dan simpan ke dalam variabel-variabel yang telah dideklarasikan
+        nama = bundle.getString("KeyNama");
+        jumlahPengeluaran = bundle.getInt("keyJumlah");
+        totalPengeluaran = bundle.getInt("keytotal");
+        hasilPengeluaran = bundle.getInt("keyHasil");
+
+        // Tampilkan nilai pada TextView di layout DataActivity
+        TextView tvNama = findViewById(R.id.tvName);
+        tvNama.setText(nama);
+
+        TextView tvJumlah = findViewById(R.id.tvJumlahPengeluaran);
+        tvJumlah.setText(Integer.toString(jumlahPengeluaran));
+
+        TextView tvTotal = findViewById(R.id.tvTotalPengeluaran);
+        tvTotal.setText(Integer.toString(totalPengeluaran));
+
+        TextView tvHasil = findViewById(R.id.tv_hasil);
+        tvHasil.setText(Integer.toString(hasilPengeluaran));
+
 
 
     }
